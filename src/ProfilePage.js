@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import "./ProfilePage.css";
 import UserPanel from "./Components/UserPanel";
-import TabBar from "./Components/TabBar";
 import FriendsTab from "./Components/FriendsTab";
 import UpcomingEvents from "./Components/UpcomingEvents";
+import Tabs from "./Components/Tabs";
 class ProfilePage extends Component {
   render() {
     return (
       <div className="container-fluid">
         <UserPanel />
-        <TabBar />
-        <FriendsTab />
-        <UpcomingEvents />
+        <Tabs>
+          <UpcomingEvents title="Upcoming Events" />
+          <FriendsTab title="Friends" />
+        </Tabs>
       </div>
     );
   }
