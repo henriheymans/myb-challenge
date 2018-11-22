@@ -1,0 +1,20 @@
+.tabs-container {
+  background: white;
+  padding: 50px 0;
+}
+
+.btn-info {
+  padding: 15px 50px;
+  background: #4abdac;
+  border: #4abdac;
+}
+
+.btn-info:hover {
+  background: #fc4a1a;
+  border: #fc4a1a;
+}
+
+.btn-info:focus {
+  background: #fc4a1a;
+  border: #4abdac;
+}

@@ -1,0 +1,29 @@
+.all-friends {
+  border-top: solid 2px #fc4a1a;
+  padding: 75px 0;
+}
+
+.item-friend {
+  height: 150px;
+  width: auto;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(156, 156, 156, 1);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(156, 156, 156, 1);
+  box-shadow: 0px 0px 20px 0px rgba(156, 156, 156, 1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px;
+}
+
+.item-friend-picture {
+  height: 90%;
+  width: auto;
+}
+
+.item-friend-infos {
+  text-align: left;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
