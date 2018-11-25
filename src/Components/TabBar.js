@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./TabBar.css";
 
 const TabBar = ({ activePageTitle, children, selectActiveTab }) => {

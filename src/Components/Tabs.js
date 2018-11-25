@@ -5,7 +5,7 @@ import TabBar from "./TabBar";
 
 class Tabs extends Component {
   state = {
-    activeTab: ""
+    activeTab: "Upcoming Events"
   };
 
   selectActiveTab = tabToActivate => {
@@ -16,11 +16,10 @@ class Tabs extends Component {
 
   render() {
     const { children } = this.props;
-    // If Active tab is whatever else than "Friends", show Upcoming Events
     let tabReturned = "";
+
     if (this.state.activeTab === "") {
       tabReturned = <UpcomingEvents />;
-      this.setState({ activeTab: "Upcoming Events" });
     } else if (this.state.activeTab === "Friends") {
       tabReturned = <FriendsTab />;
     } else {
