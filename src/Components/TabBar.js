@@ -30,10 +30,6 @@ class TabBar extends Component {
             </Link>
           </div>
         </div>
-        <div className="col-12 text-center">
-          <h2 className="page-title">{this.changeTitleName()}</h2>
-        </div>
-        <div className="page-separator" />
       </div>
     );
   }

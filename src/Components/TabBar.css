@@ -18,17 +18,3 @@
   background: #fc4a1a;
   border: #4abdac;
 }
-
-.page-title {
-  font-family: "Poppins";
-  font-size: 800;
-  margin-top: 100px;
-  margin-bottom: 30px;
-}
-
-.page-separator {
-  width: 10%;
-  height: 10px;
-  border-radius: 15px;
-  background: #fc4a1a;
-}

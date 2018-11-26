@@ -59,29 +59,41 @@ class UpcomingEvents extends Component {
     };
 
     return (
-      <Fetch url={"http://localhost:5000/players/" + eventsUrl + "/lastEvents"}>
-        {({ loading, error, data }) => {
-          if (loading) return <span>Loading...</span>;
-          if (error) return <span>Error loading</span>;
+      <div className="events-tab">
+        <div className="col-12 text-center">
+          <h2 className="page-title">Upcoming Events</h2>
+          <div className="page-separator m-auto" />
+        </div>
+        <Fetch
+          url={"http://localhost:5000/players/" + eventsUrl + "/lastEvents"}
+        >
+          {({ loading, error, data }) => {
+            if (loading) return <span>Loading...</span>;
+            if (error) return <span>Error loading</span>;
 
-          const lastEvents = Object.keys(data).map(event => (
-            <div key={event} className="item-event col-3">
-              <p>In {monthLeft(data[event].date)} months</p>
-              <h2>{data[event].name}</h2>
-              <p>{formatDate(data[event].date)}</p>
-              <p>
-                <strong>{data[event].participants.length}</strong> Participants
-              </p>
-            </div>
-          ));
+            const lastEvents = Object.keys(data).map(event => (
+              <div
+                key={event}
+                className="item-event col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6"
+              >
+                <p>In {monthLeft(data[event].date)} months</p>
+                <h2>{data[event].name}</h2>
+                <p>{formatDate(data[event].date)}</p>
+                <p>
+                  <strong>{data[event].participants.length}</strong>{" "}
+                  Participants
+                </p>
+              </div>
+            ));
 
-          return (
-            <div className="row justify-content-center all-events">
-              {lastEvents}
-            </div>
-          );
-        }}
-      </Fetch>
+            return (
+              <div className="row justify-content-center all-events">
+                {lastEvents}
+              </div>
+            );
+          }}
+        </Fetch>
+      </div>
     );
   }
 }
