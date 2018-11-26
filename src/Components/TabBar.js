@@ -1,25 +1,42 @@
-import React from "react";
+import React, { Component } from "react";
 import "./TabBar.css";
+import { Link } from "react-router-dom";
+class TabBar extends Component {
+  state = {
+    titleName: "Upcoming Events"
+  };
 
-const TabBar = ({ activePageTitle, children, selectActiveTab }) => {
-  const buttons = children.map((button, id) => (
-    <button
-      key={id}
-      onClick={() => selectActiveTab(button.props.title)}
-      className="btn btn-info m-1"
-    >
-      {button.props.title}
-    </button>
-  ));
+  changeTitleName = event => {
+    console.log(event);
+  };
 
-  return (
-    <div className="row justify-content-center tabs-container">
-      <div className="col-12 text-center">{buttons}</div>
-      <div className="col-12 text-center">
-        <h2 className="page-title">{activePageTitle}</h2>
+  render() {
+    return (
+      <div className="row justify-content-center tabs-container">
+        <div className="col-12 text-center">
+          <div>
+            <Link to="./upcoming">
+              <button
+                onClick={this.changeTitleName}
+                className="btn btn-info m-2"
+              >
+                Upcoming Events
+              </button>
+            </Link>
+            <Link to="./friends">
+              <button onClick={this.changeTitleName} className="btn btn-info">
+                Friends
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="col-12 text-center">
+          <h2 className="page-title">{this.changeTitleName()}</h2>
+        </div>
+        <div className="page-separator" />
       </div>
-      <div className="page-separator" />
-    </div>
-  );
-};
+    );
+  }
+}
+
 export default TabBar;

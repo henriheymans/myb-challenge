@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import "./FriendsTab.css";
 import Fetch from "./Fetch";
+import { Link } from "react-router-dom";
 class FriendsTab extends Component {
   render() {
+    const friendsUrl = this.props.match.params.id;
     return (
-      <Fetch url="http://localhost:5000/players/1/friends">
+      <Fetch url={"http://localhost:5000/players/" + friendsUrl + "/friends"}>
         {({ loading, error, data }) => {
           if (loading) return <span>Loading...</span>;
           if (error) return <span>Error loading</span>;
@@ -27,6 +29,7 @@ class FriendsTab extends Component {
                 </p>
                 <p>{data[friend].total_friends} Friends</p>
                 <p>{data[friend].total_events} Events</p>
+                <Link to={`/players/${data[friend].id}`}>Voir le profil</Link>
               </div>
             </div>
           ));

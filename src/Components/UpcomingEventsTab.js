@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "./UpcomingEvents.css";
 import Fetch from "./Fetch";
 class UpcomingEvents extends Component {
-  state = {};
   render() {
+    const eventsUrl = this.props.match.params.id;
+
     let formatDate = date => {
       let formattedDate = new Date(date);
       const dayNames = {
@@ -58,7 +59,7 @@ class UpcomingEvents extends Component {
     };
 
     return (
-      <Fetch url="http://localhost:5000/players/1/lastEvents">
+      <Fetch url={"http://localhost:5000/players/" + eventsUrl + "/lastEvents"}>
         {({ loading, error, data }) => {
           if (loading) return <span>Loading...</span>;
           if (error) return <span>Error loading</span>;

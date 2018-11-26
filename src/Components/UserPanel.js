@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import Fetch from "./Fetch";
 import "./UserPanel.css";
+import TabBar from "./TabBar";
 
 class UserPanel extends Component {
   render() {
+    const playerUrl = this.props.match.params.id;
+
     let lastSeen = date => {
       let lastSeenMonth = new Date(date).getMonth();
       let currentMonth = new Date().getMonth();
@@ -19,7 +22,7 @@ class UserPanel extends Component {
     };
 
     return (
-      <Fetch url="http://localhost:5000/players/1">
+      <Fetch url={"http://localhost:5000/players/" + playerUrl}>
         {({ loading, error, data }) => {
           if (loading) return <span>Loading...</span>;
           if (error) return <span>Error loading</span>;
