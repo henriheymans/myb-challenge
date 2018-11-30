@@ -1,38 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import "./TabBar.css";
 import { Link } from "react-router-dom";
-class TabBar extends Component {
-  state = {
-    titleName: "Upcoming Events"
-  };
-
-  changeTitleName = event => {
-    console.log(event);
-  };
-
-  render() {
-    return (
-      <div className="row justify-content-center tabs-container">
-        <div className="col-12 text-center">
-          <div>
-            <Link to="./upcoming">
-              <button
-                onClick={this.changeTitleName}
-                className="btn btn-info m-2"
-              >
-                Upcoming Events
-              </button>
-            </Link>
-            <Link to="./friends">
-              <button onClick={this.changeTitleName} className="btn btn-info">
-                Friends
-              </button>
-            </Link>
-          </div>
+const TabBar = () => {
+  return (
+    <div className="row justify-content-center tabs-container">
+      <div className="col-12 text-center">
+        <div>
+          <Link to="./upcoming">
+            <button className="btn btn-info m-2">Upcoming Events</button>
+          </Link>
+          <Link to="./friends">
+            <button className="btn btn-info">Friends</button>
+          </Link>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default TabBar;
