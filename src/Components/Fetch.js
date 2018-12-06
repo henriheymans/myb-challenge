@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 
-class Fetch extends Component {
+type Props = {
+  url:string,
+  // Children ?
+}
+type State = {
+  loading: boolean,
+  error:boolean,
+  data:Array
+}
+class Fetch extends Component<Props, State> {
   state = {
     loading: true,
     error: false,

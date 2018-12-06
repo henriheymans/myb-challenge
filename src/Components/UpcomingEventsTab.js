@@ -1,8 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import "./UpcomingEvents.css";
 import Fetch from "./Fetch";
 
-const UpcomingEvents = props => {
+type Props = {
+  eventsUrl: number
+}
+
+const UpcomingEvents = (props: Props) => {
   const eventsUrl = props.match.params.id;
 
   let formatDate = date => {

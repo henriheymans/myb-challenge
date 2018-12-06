@@ -2,7 +2,12 @@ import React from "react";
 import "./FriendsTab.css";
 import Fetch from "./Fetch";
 import { Link } from "react-router-dom";
-const FriendsTab = props => {
+
+type Props = {
+  friendsUrl : number
+}
+
+const FriendsTab = (props: Props) => {
   const friendsUrl = props.match.params.id;
   return (
     <div className="friends-tab">

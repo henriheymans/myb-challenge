@@ -1,0 +1,15 @@
+[ignore]
+.*/node_modules/.*
+.*/src/serviceWorker.js
+.*/src/index.js
+.*/src/App.test.js
+.*/myb-web-challenge-server/.*
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+all=true
+[strict]

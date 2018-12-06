@@ -1,3 +1,4 @@
+//@flow
 import React, { Component } from "react";
 import "./ProfilePage.css";
 import FriendsTab from "./Components/FriendsTab";

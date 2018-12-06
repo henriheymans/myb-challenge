@@ -2,7 +2,11 @@ import React from "react";
 import Fetch from "./Fetch";
 import "./UserPanel.css";
 
-const UserPanel = props => {
+type Props = {
+  playerUrl: number
+}
+
+const UserPanel = (props:Props) => {
   const playerUrl = props.match.params.id;
 
   let lastSeen = date => {
