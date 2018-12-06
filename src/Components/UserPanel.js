@@ -3,7 +3,11 @@ import Fetch from "./Fetch";
 import "./UserPanel.css";
 
 type Props = {
-  playerUrl: number
+  match : {
+    params: {
+      id:number
+    }
+  }
 }
 
 const UserPanel = (props:Props) => {

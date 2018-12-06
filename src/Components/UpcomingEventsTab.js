@@ -3,7 +3,11 @@ import "./UpcomingEvents.css";
 import Fetch from "./Fetch";
 
 type Props = {
-  eventsUrl: number
+  match: {
+    params: {
+      id:number
+    }
+  }
 }
 
 const UpcomingEvents = (props: Props) => {

@@ -4,7 +4,11 @@ import Fetch from "./Fetch";
 import { Link } from "react-router-dom";
 
 type Props = {
-  friendsUrl : number
+  match : {
+    params: {
+      id:number
+    }
+  }
 }
 
 const FriendsTab = (props: Props) => {

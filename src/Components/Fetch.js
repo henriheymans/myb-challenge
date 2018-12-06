@@ -7,7 +7,7 @@ type Props = {
 type State = {
   loading: boolean,
   error:boolean,
-  data:Array
+  data: Array
 }
 class Fetch extends Component<Props, State> {
   state = {
